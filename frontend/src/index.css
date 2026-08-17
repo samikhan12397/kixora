@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: #4A4F58; border-radius: 4px; }
+
+.btn-primary {
+  @apply bg-volt text-ink font-bold px-6 py-3 rounded text-sm tracking-wide transition-transform hover:-translate-y-0.5;
+}
+.btn-ghost {
+  @apply bg-transparent border border-steeldim text-paper font-semibold px-6 py-3 rounded text-sm transition-colors hover:border-paper;
+}
+.badge {
+  @apply text-[11px] font-mono px-2 py-0.5 rounded-full border;
+}
+.admin-input {
+  @apply bg-transparent border border-steeldim text-paper px-3 py-2 rounded text-sm w-full focus:outline-none focus:border-volt;
+}
