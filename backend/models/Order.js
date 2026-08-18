@@ -25,10 +25,11 @@ const orderSchema = new mongoose.Schema(
     },
     paymentMethod: {
       type: String,
-      enum: ["cod", "bank_transfer", "easypaisa", "jazzcash", "stripe", "paypal"],
+      enum: ["cod", "bank_transfer", "nayapay", "easypaisa", "jazzcash", "stripe", "paypal"],
       default: "cod",
     },
-    paymentStatus: { type: String, enum: ["pending", "paid", "failed", "refunded"], default: "pending" },
+    paymentStatus: { type: String, enum: ["pending", "pending_review", "paid", "failed", "refunded"], default: "pending" },
+    paymentScreenshot: String,
     itemsTotal: Number,
     shippingFee: { type: Number, default: 0 },
     discount: { type: Number, default: 0 },
