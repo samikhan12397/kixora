@@ -21,6 +21,7 @@ const cartSlice = createSlice({
   initialState: { items: [], status: "idle", drawerOpen: false },
   reducers: {
     openDrawer(state) { state.drawerOpen = true; },
+    clearCart(state) { state.items = []; },
     closeDrawer(state) { state.drawerOpen = false; },
   },
   extraReducers: (builder) => {
@@ -31,5 +32,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { openDrawer, closeDrawer } = cartSlice.actions;
+export const { openDrawer, closeDrawer, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
